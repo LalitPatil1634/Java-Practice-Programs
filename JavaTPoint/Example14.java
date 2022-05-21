@@ -1,0 +1,48 @@
+package Array.JavaTPoint;
+
+import java.util.Arrays;
+
+/*
+Java Program to sort the elements of an array in descending order.
+Algorithm
+STEP 1: START
+STEP 2: INITIALIZE arr[] ={5, 2, 8, 7, 1 }.
+STEP 3: SET temp =0
+STEP 4: PRINT "Elements of Original Array"
+STEP 5: REPEAT STEP 6 UNTIL i<arr.length
+            //for(i=0; i<arr.length; i++)
+STEP 6: PRINT arr[i]
+STEP 7: REPEAT STEP 8 to STEP 9 UNTIL i<arr.length
+            //for(i=0; i<arr.length; i++ )
+STEP 8: REPEAT STEP 9 UNTIL j<arr.length
+            //for(j=i+1;j<arr.length;j++)
+STEP 9: if(arr[i]<arr[j]) then
+            temp = arr[i]
+            arr[i]=arr[j]
+            arr[j]=temp
+STEP 10: PRINT new line
+STEP 11: PRINT "Elements of array sorted in descending order"
+STEP 12: REPEAT STEP 13 UNTIL i<arr.length
+            //for(i=0;i<arr.length;i++)
+STEP 13: PRINT arr[i]
+STEP 14: END
+ */
+public class Example14 {
+    public static void main(String[] args) {
+        int[] arr = new int[]{12, 2, 5, 3, 1, 4, 6, 2};
+        int temp = 0;
+
+        System.out.println("Original array : " + Arrays.toString(arr));
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] < arr[j]) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        System.out.println("Sorted Array : " + Arrays.toString(arr));
+    }
+}
